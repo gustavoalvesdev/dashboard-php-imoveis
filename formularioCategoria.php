@@ -21,20 +21,19 @@ include 'menu.php';
                     </div>
 
                     <div class="container" style="margin-top: 10px;">
-                        <form action="">
+                        <form action="cadastros/inserir_categoria.php" method="GET">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="">Nome</label>
-                                    <input type="text" class="form-control form-control-alternative" placeholder="Informe uma Categoria" name="categoria" required=""><br>
+                                    <label for="categoria">Nome</label>
+                                    <input type="text" class="form-control form-control-alternative" placeholder="Informe uma Categoria" id="categoria" name="categoria" required=""><br>
+                                </div>
+                            </div>
+                            <div class="card-footer py-4">
+                                <div style="text-align: right;">
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="card-footer py-4">
-                        <div style="text-align: right;">
-                            <a href="#" role="button" class="btn btn-primary">Cadastrar</a>
-                        </div>
                     </div>
                 </div>
             </div>
