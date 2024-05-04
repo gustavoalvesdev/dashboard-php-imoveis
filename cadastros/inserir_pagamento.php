@@ -2,7 +2,7 @@
 
 include '../menu.php';
 
-$categoria = $_GET['categoria'];
+$pagamento = $_GET['pagamento'];
 
 include '../assets.php';
 ?>
@@ -21,7 +21,7 @@ include '../assets.php';
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-1">
-                        <h3 class="mb-0">Status Cadastro de Categoria</h3>
+                        <h3 class="mb-0">Status Cadastro de Tipo de Pagamento</h3>
                     </div>
 
                     <div class="container" style="margin-top: 10px;">
@@ -30,7 +30,7 @@ include '../assets.php';
 
                             include '../conexao/conexao.php';
 
-                            $sql = "INSERT INTO categoria (nome_categoria) VALUES ('$categoria')";
+                            $sql = "INSERT INTO pagamento (tipo_pagamento) VALUES ('$pagamento')";
                             $inserir = mysqli_query($conexao, $sql);
 
                             if ($sql) {?>
@@ -38,7 +38,7 @@ include '../assets.php';
                                 <center>
                                     <div id="aprovado" style="width: 200px; height: 200px"></div>
                                     <h4>Aprovado</h4>
-                                    <a href="../formularioCategoria.php" role="button" class="btn btn-primary"> Voltar </a>
+                                    <a href="../formularioPagamento.php" role="button" class="btn btn-primary"> Voltar </a>
                                 </center>
 
                         <?php
@@ -46,7 +46,7 @@ include '../assets.php';
                                 <center>
                                     <div id="erro" style="width: 200px; height: 200px"></div>
                                     <h4>Reprovado</h4>
-                                    <a href="../formularioCategoria.php" role="button" class="btn btn-danger"> Voltar </a>
+                                    <a href="../formularioPagamento.php" role="button" class="btn btn-danger"> Voltar </a>
                                 </center>
         
                          <?php } ?>       

@@ -17,24 +17,23 @@ include 'menu.php';
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-1">
-                        <h3 class="mb-0">Cadastro de Pagamento</h3>
+                        <h3 class="mb-0">Cadastro de Tipo de Pagamento</h3>
                     </div>
 
                     <div class="container" style="margin-top: 10px;">
-                        <form action="">
+                        <form action="cadastros/inserir_pagamento.php" method="GET">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="">Tipo</label>
-                                    <input type="text" class="form-control form-control-alternative" placeholder="Informe um Tipo de Pagamento" name="pagamento" required=""><br>
+                                    <label for="categoria">Tipo de Pagamento</label>
+                                    <input type="text" class="form-control form-control-alternative" placeholder="Informe um tipo de Pagamento" id="pagamento" name="pagamento" required=""><br>
+                                </div>
+                            </div>
+                            <div class="card-footer py-4">
+                                <div style="text-align: right;">
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="card-footer py-4">
-                        <div style="text-align: right;">
-                            <a href="#" role="button" class="btn btn-primary">Cadastrar</a>
-                        </div>
                     </div>
                 </div>
             </div>
