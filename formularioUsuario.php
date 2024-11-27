@@ -61,14 +61,15 @@ include 'menu.php';
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer py-4">
+                                <div style="text-align: right;">
+                                    <a href="#" role="button" class="btn btn-primary">Cadastrar</a>
+                                </div>
+                            </div>
                         </form>
                     </div>
 
-                    <div class="card-footer py-4">
-                        <div style="text-align: right;">
-                            <a href="#" role="button" class="btn btn-primary">Cadastrar</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
