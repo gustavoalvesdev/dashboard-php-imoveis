@@ -1,0 +1,134 @@
+<?php 
+
+include '../menu.php';
+
+$nome = $_GET['nome'];
+$sobrenome = $_GET['sobrenome'];
+$email = $_GET['email'];
+$cpf = $_GET['cpf'];
+$end = $_GET['endereco'];
+$nro =$_GET['numero'];
+$bairro = $_GET['bairro'];
+$cidade = $_GET['cidade'];
+$estado = $_GET['estado'];
+$complemento = $_GET['complemento'];
+$cep = $_GET['cep'];
+$interesse = $_GET['interesse'];
+
+include '../assets.php';
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid mt--7">
+        <!-- Table -->
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header border-1">
+                        <h3 class="mb-0">Status Cadastro de Categoria</h3>
+                    </div>
+
+                    <div class="container" style="margin-top: 10px;">
+                        
+                         <?php 
+
+                            include '../conexao/conexao.php';
+
+                            $sql = "INSERT INTO categoria (nome_categoria) VALUES ('$categoria')";
+                            $inserir = mysqli_query($conexao, $sql);
+
+                            if ($sql) {?>
+
+                                <center>
+                                    <div id="aprovado" style="width: 200px; height: 200px"></div>
+                                    <h4>Aprovado</h4>
+                                    <a href="../formularioCategoria.php" role="button" class="btn btn-primary"> Voltar </a>
+                                </center>
+
+                        <?php
+                            } else  {?>
+                                <center>
+                                    <div id="erro" style="width: 200px; height: 200px"></div>
+                                    <h4>Reprovado</h4>
+                                    <a href="../formularioCategoria.php" role="button" class="btn btn-danger"> Voltar </a>
+                                </center>
+        
+                         <?php } ?>       
+
+                                
+                    </div>
+
+                    <div class="card-footer py-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                        &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+                            target="_blank">Creative Tim</a>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About
+                                Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+                                class="nav-link" target="_blank">MIT License</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <?php 
+        include '../rodape.php';
+    ?>
+
+    <script src="animacoes/bodymovin.js"></script>
+    <script type="text/javascript">
+        var svgContainer = document.getElementById('erro');
+        var animItem = bodymovin.loadAnimation({
+            wrapper: svgContainer,
+            animType: 'svg',
+            loop: true,
+            autoplay: true,
+
+            path: 'animacoes/error.json'
+        });
+    </script>
+
+    <script type="text/javascript">
+        var svgContainer = document.getElementById('aprovado');
+        var animItem = bodymovin.loadAnimation({
+            wrapper: svgContainer,
+            animType: 'svg',
+            loop: true,
+            autoplay: true,
+
+            path: 'animacoes/aprovado.json'
+        });
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@ include 'menu.php';
                     </div>
 
                     <div class="container" style="margin-top: 10px;">
-                        <form action="./dashboard/cadastros/inserir_cliente.php">
+                        <form action="./cadastros/inserir_cliente.php">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -40,7 +40,7 @@ include 'menu.php';
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>E-mail</label>
-                                        <input type="text" class="form-control form-control-alternative" placeholder="Digite um E-mail Válido" name="email" required="" autocomplete="off">
+                                        <input type="email" class="form-control form-control-alternative" placeholder="Digite um E-mail Válido" name="email" required="" autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -69,15 +69,26 @@ include 'menu.php';
                                         <input type="text" class="form-control form-control-alternative" placeholder="Bairro" name="bairro" required="" autocomplete="off">
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Complemento</label>
+                                        <input type="text" class="form-control form-control-alternative" placeholder="Cidade" name="complemento" required="" autocomplete="off">
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Cidade</label>
                                         <input type="text" class="form-control form-control-alternative" placeholder="Cidade" name="cidade" required="" autocomplete="off">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="row">
+                                
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Estado</label>
@@ -120,14 +131,23 @@ include 'menu.php';
                                         <input type="text" class="form-control form-control-alternative" placeholder="CEP" name="cep" required="" autocomplete="off">
                                     </div>
                                 </div>
-                           
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Interesse</label>
+                                        <select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="interesse" id="interesse" autocomplete="off">
+                                            <option value="Comprar">Comprar</option>
+                                            <option value="Alugar">Alugar</option>
+                                            <option value="Ambos">Ambos</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
-
+                            
 
                             <div class="card-footer py-4">
                                 <div style="text-align: right;">
-                                    <a href="#" role="button" class="btn btn-primary">Cadastrar</a>
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
                                 </div>
                             </div>
                         </form>
