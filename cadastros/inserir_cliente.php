@@ -4,15 +4,15 @@ include '../menu.php';
 
 $nome = $_GET['nome'];
 $sobrenome = $_GET['sobrenome'];
-$email = $_GET['email'];
-$cpf = $_GET['cpf'];
 $end = $_GET['endereco'];
 $nro =$_GET['numero'];
+$complemento = $_GET['complemento'];
 $bairro = $_GET['bairro'];
 $cidade = $_GET['cidade'];
 $estado = $_GET['estado'];
-$complemento = $_GET['complemento'];
 $cep = $_GET['cep'];
+$email = $_GET['email'];
+$cpf = $_GET['cpf'];
 $interesse = $_GET['interesse'];
 
 include '../assets.php';
@@ -41,10 +41,12 @@ include '../assets.php';
 
                             include '../conexao/conexao.php';
 
-                            $sql = "INSERT INTO categoria (nome_categoria) VALUES ('$categoria')";
-                            $inserir = mysqli_query($conexao, $sql);
+                            try {
 
-                            if ($sql) {?>
+                                $sql = "INSERT INTO cliente (nome_cliente, sobrenome_cliente, endereco_cliente, nro_end_cliente, complemento_cliente, bairro_cliente, cidade_cliente, uf_cliente, cep_cliente, mail_cliente, cpf_cliente, interesse_cliente) VALUES ('$nome', '$sobrenome', '$end', '$nro', '$complemento', '$bairro', '$cidade', '$estado', '$cep', '$email', '$cpf', '$interesse')";
+                                $inserir = mysqli_query($conexao, $sql);
+
+                            ?>
 
                                 <center>
                                     <div id="aprovado" style="width: 200px; height: 200px"></div>
@@ -53,7 +55,7 @@ include '../assets.php';
                                 </center>
 
                         <?php
-                            } else  {?>
+                            } catch(mysqli_sql_exception $e)  {?>
                                 <center>
                                     <div id="erro" style="width: 200px; height: 200px"></div>
                                     <h4>Reprovado</h4>
